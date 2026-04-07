@@ -1,5 +1,5 @@
 # AI-Conversation-Tool
-
+A speech-to-text pipeline powered by [Groq AI](http://groq.com/) that summarizes conversations, fact-checks in real time, and exposes the tool securely over HTTPS using Cloudflared.
 ### Features
 ```ini
 [+] Converts Speech to Text
