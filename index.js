@@ -2,7 +2,7 @@
 Title: AI-Conversation-Tool
 Description: Converts Speech to Text and utilizes Groq AI to summarize things
 Date Created: 4/3/26
-Author: ci5p
+Author: GoldenKisp
 */
 
 const apiKey = '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';
