@@ -5,7 +5,7 @@ Date Created: 4/3/26
 Author: GoldenKisp
 */
 
-const apiKey = 'Z3NrXzRLYkpNNGk0QjlJRjZ5VFNJaEdEV0dkeWIzRllQQjNEUUtObmZvZ0tRem9HUllncUJnOFo='; // You will need to ba
+const apiKey = 'Z3NrXzRLYkpNNGk0QjlJRjZ5VFNJaEdEV0dkeWIzRllQQjNEUUtObmZvZ0tRem9HUllncUJnOFo='; // You will need to base64 decode this line
 const fs = require('fs');
 const { spawn } = require('child_process');
 const express = require('express');
