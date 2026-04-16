@@ -5,7 +5,7 @@ Date Created: 4/3/26
 Author: GoldenKisp
 */
 
-const apiKey = 'Z3NrX2tGVURRSEwzQlZFUXF1UWdwYkY3V0dkeWIzRlllWU1XNlBqZEZJbkp4UG1HYnJMNEFjMWY=';
+const apiKey = 'Z3NrXzRLYkpNNGk0QjlJRjZ5VFNJaEdEV0dkeWIzRllQQjNEUUtObmZvZ0tRem9HUllncUJnOFo='; // You will need to ba
 const fs = require('fs');
 const { spawn } = require('child_process');
 const express = require('express');
@@ -208,9 +208,6 @@ footer a { color: var(--accent2); text-decoration: none; }
     <li><a onclick="showPage('history')" id="nav-history"><i class="fas fa-clock-rotate-left" style="font-size:0.8rem;"></i> History</a></li>
     <li><a onclick="showPage('settings')" id="nav-settings"><i class="fas fa-gear" style="font-size:0.8rem;"></i> Settings</a></li>
   </ul>
-  <div class="nav-right">
-    <div class="nav-badge">&#10022; Pro</div>
-  </div>
 </nav>
 
 <div class="mobile-nav">
@@ -285,7 +282,7 @@ footer a { color: var(--accent2); text-decoration: none; }
     <div class="panels-grid">
       <div class="panel">
         <div class="panel-head"><div class="panel-head-dot" style="background:var(--accent2);"></div>Live Transcript</div>
-        <div class="panel-body" id="liveText">Click "Start Recording" to begin capturing audio...</div>
+        <div class="panel-body" id="liveText" contenteditable="true">Click "Start Recording" to begin capturing audio... </div>
       </div>
       <div class="panel">
         <div class="panel-head"><div class="panel-head-dot" style="background:var(--green);"></div>AI Summary</div>
@@ -387,7 +384,7 @@ function showPage(name) {
 }
 
 var recording = false;
-var liveTextStr = '';
+liveTextStr = document.getElementById('liveText').textContent.trim();
 var autoInterval = null;
 var lastSummarized = '';
 var sessions = JSON.parse(localStorage.getItem('echoai_sessions') || '[]');
@@ -529,6 +526,17 @@ function clearHistory() {
     renderHistory();
   }
 }
+
+var liveEl = document.getElementById('liveText');
+
+liveEl.addEventListener('input', function () {
+  liveTextStr = liveEl.textContent.trim();
+  lastSummarized = '';
+
+  if (liveTextStr) {
+    liveEl.classList.add('has-content');
+  }
+});
 </script>
 </body>
 </html>
